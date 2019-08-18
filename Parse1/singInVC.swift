@@ -25,9 +25,12 @@ class singInVC: UIViewController {
             }
         }
 */
-
+        let keyboardRecognizer = UITapGestureRecognizer(target: self, action: #selector(uploadVC.hideKeyboard))
+        self.view.addGestureRecognizer(keyboardRecognizer)
     }
-    
+    @objc func hideKeyboard(){
+        self.view.endEditing(true)
+    }
     @IBAction func singInCliked(_ sender: Any) {
         
         if userNameText.text != "" && passworldText.text != "" {
